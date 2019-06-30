@@ -1,12 +1,303 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <style>
+    
+    body{
+            font-family: sans-serif;
+        }
+    .Contenedor{
+        display: grid;
+        grid-template-areas: 
+        "header header header header"
+        "img tabla tabla tabla";
+        margin-bottom: .5em;
+    }
+    .Contenedor h1{
+        background: linear-gradient(rgb(2, 87, 2), #018613);
+        grid-area: header;
+        margin: 0;
+        font-size: 1.3em;
+        font-weight: lighter;
+        text-align: center;
+        margin-bottom: 1.5em;
+        color: white;
+        text-transform: uppercase;
+        
+    }
+    .Contenedor span{
+        grid-area: img;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Contenedor span img{
+        width: 10em;
+    }
+    .Contenedor table{
+        grid-area: tabla;
+        background: #f2f2f2;
+    }
+    .Espacio{
+        padding-right: 3em;
+    }
+    #TxtMili{
+        background: #f2f2f2;
+        border: 1px solid #999999b9;
+    }
+    #TxtDistrito{
+        background: #f2f2f2;
+        border: 1px solid #999999b9;
+    }
+    .Contenedor2 {
+        display: grid;
+        grid-template-columns: repeat(4, 25%);
+        grid-template-rows: .6fr .5fr .7fr .2fr;
+        margin-bottom: 1rem;
+    }
+    .Contenedor2 h1{
+        grid-column: 1 / 5;
+        grid-row: 1 / 2;
+        margin: 0;
+        background: linear-gradient(rgb(2, 87, 2), #018613);
+        margin: 0;
+        font-size: 1.3em;
+        font-weight: lighter;
+        text-align: center;
+        margin-bottom: 1.2em;
+        color: white;
+        text-transform: uppercase;
+    }
+    .Contenedor2 span{
+        grid-column: 1 / 2;
+        grid-row: 2 / 5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    span img{
+        width: 10em;
+    }
+    .Contenedor2 p{
+        grid-column: 2 / 5;
+        grid-row: 2 / 3;
+        margin: 0;
+        font-size: .8em;
+        background: #f2f2f2;
+        display: flex;
+        align-items: center;
+        padding: 3px;
+    }
+    .Contenedor2 #Table1{
+        grid-column: 2 / 5;
+        grid-row: 3 / 4;
+        background: #f2f2f2;
+    }
+    .Contenedor2 #Table2{
+        grid-column: 2 / 5;
+        grid-row: 4 / 5;
+        padding: 0;
+        background: #f2f2f2;
+    }
+    .Separar{
+        font-size: .6em;
+    }
+    .Boton{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+    </style>
+
 </head>
 <body>
+
+    <div class="Contenedor">
+
+            <h1>Datos personales</h1>
+
+            <span>
+                <img src="http://es.fordesigner.com/imguploads/Image/cjbc/zcool/png20080526/1211811776.png" alt="">
+
+            </span>
+        
+            <table>
+                <tr>
+                    <td>
+                        Documento:
+                    </td>
+                    <td class="Espacio">
+                        <select id="SelectCC">
+                            <option>CC</option>
+                        </select>
+                        <input type="text" id="txtCC">
+                    </td>
+                    <td>
+                        Expedida en:
+                    </td>
+                    <td>
+                        <select id="SelectExp" style="width: 222px;">
+                            <option>SANTA MARTA</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Primer apellido:
+                    </td>
+                    <td class="Espacio">
+                        <input type="text" id="TxtPApe" size="27">
+                    </td>
+                    <td>
+                        Lugar de <br> nacimiento:
+                    </td>
+                    <td class="Separar">
+                        <input type="text" id="TxtLNac" size="10"> DD/MM/AAAA
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Segundo apellido:
+                    </td>
+                    <td class="Espacio">
+                        <input type="text" id="TxtSApe" size="27">
+                    </td>
+                    <td>
+                        País:
+                    </td>
+                    <td>
+                        <select id="SelectPais" style="width: 222px;">
+                            <option>COLOMBIA</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Nombres:
+                    </td>
+                    <td class="Espacio">
+                        <input type="text" id="TxtNombres" size="27">
+                    </td>
+                    <td>
+                        Departamento:
+                    </td>
+                    <td>
+                        <select id="SelectExp" style="width: 222px;">
+                            <option>INTERNACIONAL</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Libreta militar:
+                    </td>
+                    <td class="Espacio">
+                        <input type="radio" id="radLMili"> Si
+                        <input type="radio" id="radLMili">No
+                        <input type="text" id="txtMili" size="12">
+                    </td>
+                    <td>
+                        Municipio:
+                    </td>
+                    <td>
+                        <select id="SelectExp" style="width: 222px;">
+                            <option>SANTA MARTA</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Clase:
+                    </td>
+                    <td>
+                        <select id="SelectClase" style="color: #b6b6b6; width: 222px">
+                            <option>SELECCIONA</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Distrito:
+                    </td>
+                    <td>
+                        <input type="text" id="TxtDistrito" size="27">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="Contenedor2">
+                <h1>Estudios secundarios</h1>
+        
+                <span>
+                    <img src="http://sinfomec.serranoprada.com/img/acceso.png" alt="estsecun">
+                </span>
+
+                <p>
+                    Marque el último grado aprobado (los grados de 1° a 6° de bachillerato equivalen a los grados de 6° a 11° de educación básica secundaria y media).
+                </p>
+
+                <table id="Table1">
+                    <tr>
+                        <td>
+                            Nivel de <br>
+                            aprobación
+                        </td>
+                        <td>
+                            <input type="radio">1°
+                            <input type="radio">2°
+                            <input type="radio">3°
+                            <input type="radio">4°
+                            <input type="radio">5°
+                            <input type="radio">6°
+                            <input type="radio">7°
+                            <input type="radio">8°
+                            <input type="radio">9°
+                            <input type="radio">10°
+                            <input type="radio">11°
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Nombre de la <br>
+                            institución
+                        </td>
+                        <td>
+                            <input type="text" size="27">
+                        </td>
+                    </tr>
+                </table>
+                <table id="Table2">
+                    <tr>
+                        <td>Título obtenido</td>
+                        <td>
+                            <input type="text" size="27">
+                        </td>
+                        <td>
+                            Fecha de <br>
+                            Graduación
+                        </td>
+                        <td class="Separar">
+                            <input type="text" size="10"> DD/MM/AAAA
+                        </td>
+                    </tr>
+                </table>
+        </div>
+        
+        <div class="Boton">
+            <button>Submit</button>
+        </div>
     
 </body>
 </html>
